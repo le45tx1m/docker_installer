@@ -3,7 +3,7 @@
 Just execute to install last docker & docker-compose :
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lanbugs/docker_installer/HEAD/installer_docker.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/lanbugs/docker_installer/HEAD/installer_docker.sh)"
 ```
 
 Have fun ;-)
