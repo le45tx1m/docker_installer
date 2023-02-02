@@ -20,10 +20,10 @@ echo -e " ${GREEN}>>> Remove old docker versions ...${ENDCOLOR} "
 sudo apt remove docker docker-engine docker.io containerd runc
 
 echo -e " ${GREEN}>>> Add repo key ...${ENDCOLOR} "
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --batch --yes --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --batch --yes --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
 
 echo -e " ${GREEN}>>> Add repo ...${ENDCOLOR} "
-sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo add-apt-repository -y "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
 
 echo -e " ${GREEN}>>> Get repo updates ...${ENDCOLOR} "
 sudo apt -y update
@@ -43,7 +43,7 @@ echo -e " ${GREEN}>>> Identify shell ...${ENDCOLOR} "
 if [[ -v BASH ]];
 then
   echo -e " ${GREEN}>>> It is bash, install bash completion definition for docker-compose ...${ENDCOLOR} "
-  sudo curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+  sudo curl -L https://ghproxy.com/https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
   source /etc/bash_completion.d/docker-compose
 fi
 
